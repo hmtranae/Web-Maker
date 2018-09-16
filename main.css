@@ -1,0 +1,100 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+ul li {
+    list-style: none;
+    color:#337ab7;
+    padding-bottom:12px;
+}
+ul li a:hover {
+    text-decoration: none;
+}
+.shift-up {
+    margin-bottom: 6px;
+}
+.head-footer {
+    background-color: #337ab7;
+    /* padding: 10px 10px; */
+}
+#h2-white {
+    color:#fff;
+    font-weight: 350;
+    font-size:30px;
+    padding-bottom:5px;
+}
+#h2-grey {
+    color:#9b9b9b;
+    font-weight: 350;
+    font-size:30px;
+    padding-bottom: 5px;    
+}
+.icons-right {
+    color:#fff;
+    font-size:20px;
+    padding: 6px 12px;
+}
+.icons-left {
+    color:#fff;
+    float:left;
+    font-size:20px;
+    padding: 20px 15px;
+}
+.form-label {
+    font-weight: 730;
+}
+.checkmark-right {
+    color:#fff;
+    float:right;
+    padding: .7rem .75rem;
+}
+.cog-right {
+    float:right;
+    padding-right:50px;
+}
+.glyphicon:hover {
+    text-decoration: none;
+}
+#textarea-padding {
+    padding-left: 18px;
+    padding-right: 10px;
+}
+.checkmark-grid {
+    color:#fff;
+    font-size:20px;
+    padding:0px 12px;
+}
+.page-icons {
+    color:#000;
+    font-size:20px;
+    padding:0px 12px;
+}
+.full-width {
+    width:100%;
+}
+.small-min-width {
+    width: 95%;
+    min-width: 300px
+}
+.icon-position {
+    padding-top: 14px;
+}
+.vertical-rule {
+    border-right:1px solid #c7c7c7;
+}
+.list-format-padding {
+    padding-left:20px;
+}
+.fa-user:hover {
+    color:none;
+}
+.sw-full-screen{
+    position: absolute;
+    bottom: 0;
+    top: 65px;
+    left: 0;
+    right: 0;
+}
+.user-icons {
+    color: #337ab7;
+}
