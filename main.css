@@ -50,7 +50,7 @@ ul li a:hover {
 }
 .cog-right {
     float:right;
-    padding-right:50px;
+    padding-right:20px;
 }
 .glyphicon:hover {
     text-decoration: none;

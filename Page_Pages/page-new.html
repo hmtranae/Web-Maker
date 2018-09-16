@@ -8,18 +8,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
-    <title>Page New</title>
+    <title>Page List</title>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar fixed-top row head-footer navbar-light bg-light">
-
+        <nav class="navbar fixed-top row navbar-light bg-light row">
+            <div class="col">
+                <a href="../Website_Pages/website-list.html"><i class="fas fa-less-than page-icons"></i></a>
+                <span id="h2-grey"><strong>New Page</strong></span>
+            </div>
+            <div class="col">
+                <a href="page-new.html"><i class="page-icons fas fa-plus float-right"></i></a>
+            </div> 
         </nav>
     </div>
 
+    <div class="container-fluid">
+        <form>
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" placeholder="Page Name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Page Title">
+            </div>
+        </form>
+    </div>
+
     <div class="container">
-        <nav class="navbar fixed-bottom row head-footer navbar-light bg-light">
-            
+        <nav class="navbar fixed-bottom navbar-light bg-light">
+            <div class="full-width">
+                <i class="fas fa-user float-right icons-right user-icons"></i>
+            </div>
         </nav>
     </div>
 </body>
