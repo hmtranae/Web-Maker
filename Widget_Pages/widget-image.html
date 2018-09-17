@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../main.css">
+    <title>Heading Widget</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar fixed-top row navbar-light bg-light row">
+            <div class="col small-min-width">
+                <a href="../Website_Pages/website-list.html"><i class="fas fa-less-than page-icons"></i></a>
+                <span id="h2-grey"><strong>Widget Edit</strong></span>
+            </div>
+            <div class="col">
+                <a href="../Website_Pages/widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <form>
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" placeholder="Heading Name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="text" class="form-label">Text</label>
+                <input type="text" placeholder="This video is about ..." id="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="url" class="form-label">URL</label>
+                <input type="text" placeholder="URL of video is ..." id="url" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="width" class="form-label">Width</label>
+                <input type="text" placeholder="100%" id="width" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="upload-img" class="form-label">Upload</label>
+                <!-- Look at option to allow user to upload some image from their end -->
+                <input type="" placeholder="" id="upload-img" class="form-control">
+            </div>
+        </form>
+        <button class="btn btn-primary btn-block">Upload Image</button>
+        <button class="btn btn-danger btn-block">Delete</button>
+    </div>
+
+    <div class="container">
+        <nav class="navbar fixed-bottom navbar-light bg-light">
+            <div class="full-width">
+                <i class="fas fa-user float-right icons-right user-icons"></i>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
