@@ -31,7 +31,7 @@ p {
 #h2-white {
     color:#fff;
     font-weight: 350;
-    font-size:30px;
+    font-size:26px;
     padding-bottom:5px;
 }
 #h2-grey {
@@ -70,7 +70,7 @@ p {
 .checkmark-grid {
     color:#fff;
     font-size:20px;
-    padding:0px 12px;
+    padding:0px 8px;
 }
 .page-icons {
     color:#000;
@@ -83,6 +83,10 @@ p {
 .small-min-width {
     width: 95%;
     min-width: 300px
+}
+.small-min-width-website-edit {
+    width: 95%;
+    min-width: 220px
 }
 .icon-position {
     padding-top: 14px;
