@@ -35,7 +35,7 @@ p {
     padding-bottom:5px;
 }
 #h2-grey {
-    color:#9b9b9b;
+    color:#747474;
     font-weight: 350;
     font-size:30px;
     padding-bottom: 5px;
@@ -111,4 +111,7 @@ p {
 }
 .push-icons-down {
     padding-top:6px;
+}
+.page-navbar-color {
+    background-color: #b9b9b9;
 }
