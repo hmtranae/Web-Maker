@@ -15,15 +15,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar fixed-top row navbar-light bg-light row">
-            <div class="col small-min-width">
-                <a href="../Website_Pages/website-list.html"><i class="fas fa-less-than page-icons"></i></a>
+    <div>
+        <nav class="navbar fixed-top row navbar-light page-navbar-color row">
+            <a href="widget-list.html"><i class="fas fa-less-than page-icons"></i></a>
+            <div class="col">
                 <span id="h2-grey"><strong>Widget Edit</strong></span>
             </div>
-            <div class="col">
-                <a href="../Website_Pages/widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
-            </div>
+            <a href="widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
         </nav>
     </div>
 
@@ -35,23 +33,22 @@
             </div>
             <div class="form-group">
                 <label for="text" class="form-label">Text</label>
-                <input type="text" placeholder="US Senate Reaches Compromise on Emergency Zika Funding" id="text" class="form-control">
+                <input type="text" placeholder="More days of flooding ahead for Carolinas, surrounding states" id="text"
+                    class="form-control">
             </div>
             <div class="form-group">
                 <label for="size" class="form-label">Size</label>
-                <input type="text" placeholder="3" id="size" class="form-control">
+                <input type="number" placeholder="3" id="size" class="form-control">
             </div>
+            <a class="btn btn-danger btn-block" href="widget-list.html">Delete</a>
         </form>
-        <button class="btn btn-danger btn-block">Delete</button>
     </div>
 
-    <div class="container">
-        <nav class="navbar fixed-bottom navbar-light bg-light">
-            <div class="full-width">
-                <i class="fas fa-user float-right icons-right user-icons"></i>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar fixed-bottom navbar-light page-navbar-color">
+        <div class="full-width">
+            <i class="fas fa-user float-right icons-right user-icons"></i>
+        </div>
+    </nav>
 </body>
 
 </html>
