@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="initial-scale=1.25, user-scalable=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
     <title>Website List</title>
 </head>
+
 <body>
-   <nav class="navbar fixed-top head-footer row">
+    <nav class="navbar fixed-top head-footer row">
+        <a href="../User_Pages/profile.html"><i class="fas fa-less-than checkmark-grid"></i></a>
         <div class="col">
-            <a href="../User_Pages/profile.html"><i class="fas fa-less-than checkmark-grid"></i></a>
             <span id="h2-white"><strong>Websites</strong></span>
             <!-- The reason why the word Websites is on a new line is because it is a block element - need to change it to inline using span or something -->
         </div>
-        <div class="col">
-            <a href="website-new.html"><i class="checkmark-grid fas fa-plus float-right"></i></a>
-        </div>
-   </nav>
-   <div class="container-fluid">
-       <ul>
-           <li><a href="../Page_Pages/page-list.html">Address Book App</a>
-            <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
-           <li><a href="../Page_Pages/page-list.html">Blogger</a>
-            <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
-           <li><a href="../Page_Pages/page-list.html">Blogging App</a>
-            <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
-           <li><a href="../Page_Pages/page-list.html">Script Testing App</a>
-            <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
-       </ul> 
-   </div>
-   <nav class="navbar fixed-bottom head-footer">
+        <a href="website-new.html"><i class="checkmark-grid fas fa-plus float-right"></i></a>
+    </nav>
+    <div class="container-fluid">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="../Page_Pages/page-list.html">Address Book App</a>
+                <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
+            <li class="list-group-item"><a href="../Page_Pages/page-list.html">Blogger</a>
+                <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
+            <li class="list-group-item"><a href="../Page_Pages/page-list.html">Blogging App</a>
+                <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
+            <li class="list-group-item"><a href="../Page_Pages/page-list.html">Script Testing App</a>
+                <a href="website-edit.html"><i class="fas fa-cog cog-right"></i></a></li>
+        </ul>
+    </div>
+    <nav class="navbar fixed-bottom head-footer">
         <div class="full-width">
-            <i class="fas fa-user float-right icons-right"></i>
+            <a href="../User_Pages/profile.html"><i class="fas fa-user float-right icons-right"></i></a>
         </div>
-   </nav>
+    </nav>
 </body>
+
 </html>
