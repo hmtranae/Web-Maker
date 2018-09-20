@@ -11,49 +11,45 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
-    <title>Heading Widget</title>
+    <title>Widget Youtube</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <nav class="navbar fixed-top row navbar-light page-navbar-color row">
-            <div class="col small-min-width">
-                <a href="../Website_Pages/website-list.html"><i class="fas fa-less-than page-icons"></i></a>
-                <span id="h2-grey"><strong>Widget Edit</strong></span>
-            </div>
-            <div class="col">
-                <a href="../Website_Pages/widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar fixed-top row navbar-light page-navbar-color">
+        <a href="widget-list.html"><i class="fas fa-less-than page-icons"></i></a>
+        <div class="col">
+            <span id="h2-grey"><strong>Widget Edit</strong></span>
+        </div>
+        <a href="widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
+    </nav>
 
     <div class="container-fluid">
         <form>
             <div class="form-group">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" placeholder="Heading Name" id="name" class="form-control">
+                <input type="text" placeholder="Video Name" id="name" class="form-control">
             </div>
             <div class="form-group">
                 <label for="text" class="form-label">Text</label>
-                <input type="text" placeholder="This video is about ..." id="text" class="form-control">
+                <input type="text" placeholder="Video Text" id="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="url" class="form-label">URL</label>
-                <input type="text" placeholder="URL of video is ..." id="url" class="form-control">
+                <input type="text" placeholder="Video URL" id="url" class="form-control">
             </div>
             <div class="form-group">
                 <label for="width" class="form-label">Width</label>
-                <input type="text" placeholder="100%" id="width" class="form-control">
+                <input type="text" placeholder="Video Width" id="width" class="form-control">
             </div>
+            <a href="widget-list.html" class="btn btn-danger btn-block">Delete</a>
         </form>
-        <button class="btn btn-danger btn-block">Delete</button>
     </div>
 
     <div class="container">
         <nav class="navbar fixed-bottom navbar-light page-navbar-color">
             <div class="full-width">
-                <i class="fas fa-user float-right icons-right user-icons"></i>
+                <a href="../User_Pages/profile.html"><i class="fas fa-user float-right icons-right user-icons"></i></a>
             </div>
         </nav>
     </div>

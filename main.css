@@ -3,7 +3,6 @@ body {
     padding-bottom: 70px;
     background-color: #f8f8f8;
 }
-
 ul li {
     list-style: none;
     color:#337ab7;
@@ -14,12 +13,6 @@ ul li a:hover {
 }
 p {
     font-size:18px;
-}
-#unique-h1 {
-    display:inline;
-}
-#unique-h3 {
-    display:inline;
 }
 .shift-up {
     margin-bottom: 6px;
@@ -57,11 +50,11 @@ p {
 .checkmark-right {
     color:#fff;
     float:right;
-    /* padding: .7rem .75rem; */
+    font-size: 20px;
 }
 .cog-right {
     float:right;
-    padding-right:20px;
+    padding-right:0px;
 }
 #textarea-padding {
     padding-left: 18px;
@@ -70,12 +63,12 @@ p {
 .checkmark-grid {
     color:#fff;
     font-size:20px;
-    padding:0px 8px;
+    padding:0px 6px;
 }
 .page-icons {
     color:#000;
     font-size:18px;
-    padding:0px 12px;
+    padding:0px 10px;
 }
 .full-width {
     width:100%;
@@ -89,7 +82,7 @@ p {
     min-width: 220px
 }
 .icon-position {
-    padding-top: 14px;
+    padding-top: 10px;
 }
 .vertical-rule {
     border-right:1px solid #c7c7c7;
@@ -118,4 +111,11 @@ p {
 }
 .page-navbar-color {
     background-color: #b9b9b9;
+}
+.absolute-right {
+    position:absolute;
+    right:15px;
+    z-index: 2;
+    background-color:#fff;
+    border-radius:2px;
 }
