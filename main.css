@@ -102,6 +102,8 @@ p {
 }
 .user-icons {
   color: #337ab7;
+  font-size: 20px;
+  padding: 6px 12px;
 }
 .widget-list-icon-width {
   min-width: 50px;
