@@ -19,13 +19,11 @@ p {
 }
 .head-footer {
   background-color: #337ab7;
-  /* padding: 10px 10px; */
 }
 #h2-white {
   color: #fff;
   font-weight: 350;
   font-size: 26px;
-  /* padding-bottom:5px; */
 }
 #h2-grey {
   color: #747474;
@@ -87,18 +85,18 @@ p {
 .vertical-rule {
   border-right: 1px solid #c7c7c7;
 }
-.list-format-padding {
-  padding-left: 20px;
-}
-.fa-user:hover {
-  color: none;
-}
 .sw-full-screen {
   position: absolute;
   bottom: 0;
   top: 65px;
   left: 0;
   right: 0;
+}
+.list-format-padding {
+  padding-left: 20px;
+}
+.fa-user:hover {
+  color: none;
 }
 .user-icons {
   color: #337ab7;
