@@ -1,33 +1,33 @@
 <nav class="navbar fixed-top row navbar-light page-navbar-color">
-    <a href="../Page_Pages/page-list.html"><i class="fas fa-less-than page-icons"></i></a>
+    <a routerLink="/user/:uid/website/:wid/page"><i class="fas fa-less-than page-icons"></i></a>
     <div class="col">
-        <span id="h2-grey"><strong>Widgets</strong></span>
+        <a routerLink='/user/:uid/website/:wid/page/:pid/widget'><span id="h2-grey"><strong>Widgets</strong></span></a>
     </div>
-    <a href="widget-choose.html"><i class="page-icons fas fa-plus float-right"></i></a>
+    <a routerLink="/user/:uid/website/:wid/page/:pid/widget/new"><i class="page-icons fas fa-plus float-right"></i></a>
 </nav>
 
 <!-- There are n rows for n items from widget-choose.html -->
 <div class="container-fluid">
     <!-- Item 1 -->
     <div class="absolute-right">
-        <a href="#"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <h1><strong>REUTERS</strong></h1>
     </div>
     <!-- Item 2 -->
     <div class="absolute-right">
-        <a href="widget-heading.html"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <h3><strong>More days of flooding ahead for Carolinas, surrounding states</strong></h3>
     </div>
     <!-- Item 3 -->
     <div class="absolute-right">
-        <a href="widget-image.html"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <img src="https://s2.reutersmedia.net/resources/r/?m=02&d=20180917&t=2&i=1305109304&w=780&fh=&fw=&ll=&pl=&sq=&r=2018-09-17T015016Z_10123_MRPRC1F4D7C0760_RTRMADP_0_STORM-FLORENCE"
@@ -36,8 +36,8 @@
     </div>
     <!-- Item 4 -->
     <div class="absolute-right">
-        <a href="#"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <p>The remnants of deadly Hurricane Florence brought more misery to the waterlogged
@@ -52,16 +52,16 @@
     </div>
     <!-- Item 5 -->
     <div class="absolute-right">
-        <a href="widget-heading.html"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <h3><strong>Boring Co. test underground car elevator for high-speed Loop</strong></h3>
     </div>
     <!-- Item 6 -->
     <div class="absolute-right">
-        <a href="widget-youtube.html"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div class="container row col-l-8 col-xs-12">
         <div class="embed-responsive embed-responsive-16by9">
@@ -70,8 +70,8 @@
     </div>
     <!-- Item 7 -->
     <div class="absolute-right">
-        <a href="#"><i class="fas fa-cog"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
     </div>
     <div>
         <p>
@@ -94,8 +94,8 @@
 
 <nav class="navbar fixed-bottom navbar-light page-navbar-color">
     <div class="full-width">
-        <a href='#'><i class="fas fa-play icon-position page-icons"></i></a>
-        <a href='#'><i class="fas fa-eye icon-position page-icons"></i></a>
-        <a href="../User_Pages/profile.html"><i class="fas fa-user float-right user-icons"></i></a>
+        <a routerLink='#'><i class="fas fa-play icon-position page-icons"></i></a>
+        <a routerLink='#'><i class="fas fa-eye icon-position page-icons"></i></a>
+        <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
     </div>
 </nav>
