@@ -1,7 +1,7 @@
 <!-- Bootstrap .navbar and .fixed-top create a navbar fixed to the top -->
 <nav class="navbar fixed-top head-footer">
-  <h2 id="h2-white"><strong>Profile</strong></h2>
-  <a href="profile.html"><i class="fas fa-check checkmark-right"></i></a>
+  <a routerLink="/user/:uid"><h2 id="h2-white"><strong>Profile</strong></h2></a>
+  <a routerLink="/user/:uid"><i class="fas fa-check checkmark-right"></i></a>
 </nav>
 <br>
 <div class="container">
@@ -22,13 +22,13 @@
           <label for="last-name" class="form-label">Last Name</label>
           <input type="text" placeholder="Tran" id="last-name" class="form-control">
       </div>
-      <a href="../Website_Pages/website-list.html" class="btn btn-primary btn-block">Websites</a>
-      <a href="login.html" class="btn btn-danger btn-block">Logout</a>
+      <a routerLink="/user/:uid/website" class="btn btn-primary btn-block">Websites</a>
+      <a routerLink="/login" class="btn btn-danger btn-block">Logout</a>
   </form>
 </div>
 <!-- .fixed-bottom fixes navbar to the footer -->
 <nav class="navbar fixed-bottom head-footer">
   <div class="full-width">
-      <i class="fas fa-user float-right icons-right"></i>
+      <a routerLink='/user/:uid'><i class="fas fa-user float-right icons-right"></i></a>
   </div>
 </nav>
