@@ -1,10 +1,10 @@
 <div>
     <nav class="navbar fixed-top row navbar-light page-navbar-color">
-        <a href="widget-list.html"><i class="fas fa-less-than page-icons"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-less-than page-icons"></i></a>
         <div class="col">
-            <span id="h2-grey"><strong>Widget Edit</strong></span>
+            <a routerLink='/user/:uid/website/:wid/page/:pid/widget/:wgid'><span id="h2-grey"><strong>Widget Edit</strong></span></a>
         </div>
-        <a href="widget-list.html"><i class="fas fa-check page-icons float-right"></i></a>
+        <a href="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-check page-icons float-right"></i></a>
     </nav>
 </div>
 
@@ -23,12 +23,12 @@
             <label for="size" class="form-label">Size</label>
             <input type="number" placeholder="3" id="size" class="form-control">
         </div>
-        <a class="btn btn-danger btn-block" href="widget-list.html">Delete</a>
+        <a class="btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Delete</a>
     </form>
 </div>
 
 <nav class="navbar fixed-bottom navbar-light page-navbar-color">
     <div class="full-width">
-        <a href="../User_Pages/profile.html"><i class="fas fa-user float-right user-icons"></i></a>
+        <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
     </div>
 </nav>
