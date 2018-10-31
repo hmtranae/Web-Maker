@@ -43,23 +43,39 @@ export class WidgetService {
     ];
 
     createWidget(widget) {
-
+        widget._id = Math.random().toString();
+        this.widgets.push(widget);
+        return widget;
     }
 
     findWidgetsByPageId(pageId) {
-
+        let result = [];
+        for (let i = 0; i < this.widgets.length; i++) {
+            if (this.widgets[i].pageId === pageId) {
+                result.push(this.widgets[i]); 
+            }
+        }
+        return result;
     }
 
     findWidgetById(widgetId) {
-
+        for (let i = 0; i < this.widgets.length; i++) {
+            if (this.widgets[i]._id === widgetId) {
+                return this.widgets[i];
+            }
+        }
     }
 
     updateWidget(widget) {
-
+        const oldWidget = this.findWidgetById(widget._id);
+        const index = this.widgets.indexOf(oldWidget);
+        this.widgets[index] = widget;
     }
 
     deleteWidget(widgetId) {
-
+        const widget = this.findWidgetById(widgetId);
+        const index = this.widgets.indexOf(widget);
+        this.widgets.splice(index, 1);
     }
-    
+
 }

@@ -34,8 +34,9 @@ export class PageService {
     findPagesByWebsiteId(websiteId) {
         let result = [];
         for (let i = 0; i < this.pages.length; i++) {
-            if (this.pages[i].websiteId === websiteId)
-            result.push(this.pages[i]);
+            if (this.pages[i].websiteId === websiteId) {
+                result.push(this.pages[i]);
+            }
         }
         return result;
     }
