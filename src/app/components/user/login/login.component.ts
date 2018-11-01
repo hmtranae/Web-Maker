@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../../services/user.service.client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  username : string;
+  password : string;
+  errorFlag : boolean;
 
-  ngOnInit() {
+  constructor(private userService : UserService, private router : Router) {}
+
+  ngOnInit() {}
+
+  login() {
+    const user = this.userService.findUserByCredentials(
+      this.username, 
+      this.password
+    );
+
+    if(user) {
+      this.router.navigate([`user/${user._id}`]);
+      // Other ways to write above are:
+      // this.router.navigate(['user', user._id'])
+      // string concatenation
+    } else {
+      this.errorFlag = true;
+    }
   }
 
 }
