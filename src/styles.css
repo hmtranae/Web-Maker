@@ -121,3 +121,6 @@ body {
     border-radius: 2px;
   }
   
+  .bg-transparent {
+    background: transparent;
+  }

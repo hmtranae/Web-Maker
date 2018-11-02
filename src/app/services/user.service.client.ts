@@ -64,7 +64,7 @@ export class UserService {
 
   findUserByUsername(username: string) {  
 		for (let i = 0; i < this.users.length; i++) {
-			if (this.users[i]._id === username) {
+			if (this.users[i].username === username) {
 				return this.users[i];
 			}
 		}

@@ -1,20 +1,25 @@
 <div class="container">
   <h2><strong>Register</strong></h2>
   <form (ngSubmit)='register()' #myForm='ngForm'>
+      <div *ngIf='userError' class="alert alert-danger">This Username is Taken, Please Try Another One</div>
+      <div *ngIf='passwordError' class="alert alert-danger">Two Passwords Do Not Match, Please Try Again</div>
 
       <div class="form-group shift-up">
-          <input [(ngModel)]='username' name='username' type="text" class="form-control" placeholder="Username">
+          <input [(ngModel)]='username' required name='username' type="text" class="form-control" placeholder="Username" #userInput='ngModel'>
       </div>
+      <div *ngIf='userInput.invalid && userInput.touched' class="alert alert-warning">Username cannot be empty</div>
 
       <div class="form-group shift-up">
-          <input [(ngModel)]='password' name='password' type="password" class="form-control" placeholder="Password">
+          <input [(ngModel)]='password' required name='password' type="password" class="form-control" placeholder="Password" #passwordInput='ngModel'>
       </div>
+      <div *ngIf='passwordInput.invalid && passwordInput.touched' class="alert alert-warning">Password cannot be empty</div>
 
       <div class="form-group shift-up">
-          <input [(ngModel)]='verifyPassword' name='verifyPassword' type="password" class="form-control" placeholder="Verify Password">
+          <input [(ngModel)]='verifyPassword' required name='verifyPassword' type="password" class="form-control" placeholder="Verify Password" #verifyPasswordInput='ngModel'>
       </div>
+      <div *ngIf='verifyPasswordInput.invalid && verifyPasswordInput.touched' class="alert alert-warning">Please Enter the Password Again</div>
 
-      <button type='submit' class="btn btn-primary btn-block">Register</button>
+      <button type='submit' [disabled]='myForm.invalid' class="btn btn-primary btn-block">Register</button>
 
       <a routerLink="/login" class="btn btn-danger btn-block">Cancel</a>
 
