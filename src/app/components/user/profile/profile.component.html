@@ -1,6 +1,6 @@
 <!-- Bootstrap .navbar and .fixed-top create a navbar fixed to the top -->
 <nav class="navbar fixed-top head-footer">
-  <a routerLink="/user/:uid"><h2 id="h2-white"><strong>Profile</strong></h2></a>
+  <a routerLink="/user/{{uid}}"><h2 id="h2-white"><strong>Profile</strong></h2></a>
   <button [disabled]='myForm.invalid' class='btn bg-transparent' type='submit' form='myForm'><i class="fas fa-check checkmark-right"></i></button>
 </nav>
 <br>
@@ -37,6 +37,6 @@
 <!-- .fixed-bottom fixes navbar to the footer -->
 <nav class="navbar fixed-bottom head-footer">
   <div class="full-width">
-      <a routerLink='/user/:uid'><i class="fas fa-user float-right icons-right"></i></a>
+      <a routerLink='/user/{{uid}}'><i class="fas fa-user float-right icons-right"></i></a>
   </div>
 </nav>
