@@ -1,54 +1,43 @@
 <nav class="navbar fixed-top row head-footer">
   <div class="col-3 small-min-width d-none d-xl-block">
-      <a routerLink="/user/:uid/website"><i class="fas fa-less-than checkmark-grid"></i></a>
-      <a routerLink='/user/:uid/website'><span id="h2-white"><strong>Websites</strong></span></a>
-      <span class="float-right icon-position"><a routerLink="/user/:uid/website/new"><i class="checkmark-grid fas fa-plus"></i></a></span>
+      <a routerLink="/user/{{uid}}/website"><i class="fas fa-less-than checkmark-grid"></i></a>
+      <a routerLink='/user/{{uid}}/website'><span id="h2-white"><strong>Websites</strong></span></a>
+      <span class="float-right icon-position"><a routerLink="/user/{{uid}}/website/new"><i class="checkmark-grid fas fa-plus"></i></a></span>
   </div>
   <div class="col-xl-9 col-xs-12">
-      <span class="d-xl-none icon-position"><a routerLink="/user/:uid/website"><i class="checkmark-grid fas fa-less-than"></i></a></span>
-      <a routerLink='user/:uid/website/:wid'><span id="h2-white"><strong>Edit Website</strong></span></a>
-      <span class="float-right icon-position"><a routerLink="/user/:uid/website"><i class="checkmark-grid fas fa-check"></i></a></span>
+      <span class="d-xl-none icon-position"><a routerLink="/user/{{uid}}/website"><i class="checkmark-grid fas fa-less-than"></i></a></span>
+      <a routerLink='user/{{uid}}/website/{{wid}}'><span id="h2-white"><strong>Edit Website</strong></span></a>
+      <span class="float-right icon-position btn"><button class='btn bg-transparent' type='submit' form='myForm'><i class="checkmark-grid fas fa-check"></i></button></span>
   </div>
 </nav>
 <div class="row list-format-padding full-width sw-full-screen">
   <div class="col-3 d-none d-xl-block vertical-rule">
       <ul class="list-group">
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Address Book App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Blogger</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Blogging App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Script Testing App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
+          <li class="list-group-item" *ngFor='let website of websites'>
+              <a routerLink="/user/{{uid}}/website/{{wid}}/page">{{website.name}}</a>
+              <a routerLink="/user/{{uid}}/website/{{wid}}"><i class="fas fa-cog float-right"></i></a>
           </li>
       </ul>
   </div>
 
   <div class="col-xl-9 col-sm-12">
-      <form>
+      <form id='myForm' #myForm='ngForm' (ngSubmit)='update()'>
           <div class="form-group">
               <label for="website-name"><strong>Website Name</strong></label>
-              <input type="text" placeholder="Blogger" class="form-control" id="website-name">
+              <input [(ngModel)]='website.name' name='name' type="text" placeholder="Blogger" class="form-control" id="website-name">
           </div>
           <div class="form-group">
               <label for="website-description"><strong>Website Description</strong></label>
-              <textarea id="website-description" rows="4" class="form-control" placeholder="Blogger is a blog-publishing service that allows multi-user blogs with time-stamped entries. It was developed by Pyra Labs, which was bought by Google in 2003. The blogs are hosted by Google and generally accessed from a subdomain of blogspot.com. Blogs can also be served from a custom domain owned by the user (like www.example.com) by using DNS facilities to direct a domain to Google's servers.[4][5][6] A user can have up to 100 blogs per account."></textarea>
+              <textarea [(ngModel)]='website.description' name='description' id="website-description" rows="4" class="form-control" placeholder="Describe the website"></textarea>
           </div>
-          <a routerLink="/user/:uid/website" class="btn btn-danger btn-block" type="submit">Delete</a>
+          <a routerLink='/user/{{uid}}/website' class='btn btn-lg btn-warning'>Cancel</a>
+          <button type='button' (click)='delete()' class="btn btn-danger btn-lg float-right" type="submit">Delete</button>
       </form>
   </div>
 </div>
 
 <nav class="navbar fixed-bottom head-footer">
   <div class="full-width">
-      <a routerLink="/user/:uid"><i class="fas fa-user float-right icons-right"></i></a>
+      <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right icons-right"></i></a>
   </div>
 </nav>

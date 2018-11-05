@@ -3,14 +3,14 @@
       <!-- .d-none makes element hidden on all and .d-xl-block makes visible on xl -->
       <!-- Example: .d-none .d-m-block .d-lg-none is visible only on md -->
       <div class="col-3 small-min-width d-none d-xl-block">
-          <a routerLink="/user/:uid/website"><i class="fas fa-less-than checkmark-grid"></i></a>
-          <a routerLink='/user/:uid/website'><span id="h2-white"><strong>Websites</strong></span></a>
-          <span class="float-right icon-position"><a routerLink="/user/:uid/website/new"><i class="checkmark-grid fas fa-plus"></i></a></span>
+          <a routerLink="/user/{{uid}}/website"><i class="fas fa-less-than checkmark-grid"></i></a>
+          <a routerLink='/user/{{uid}}/website'><span id="h2-white"><strong>Websites</strong></span></a>
+          <span class="float-right icon-position"><a routerLink="/user/{{uid}}/website/new"><i class="checkmark-grid fas fa-plus"></i></a></span>
       </div>
       <div class="col-xl-9 col-xs-12">
-          <span class="d-xl-none icon-position"><a routerLink="/user/:uid/website"><i class="checkmark-grid fas fa-less-than"></i></a></span>
-          <a routerLink='/user/:uid/website/new'><span id="h2-white"><strong>New Website</strong></span></a>
-          <span class="float-right icon-position"><a routerLink="/user/:uid/website"><i class="checkmark-grid fas fa-check"></i></a></span>
+          <span class="d-xl-none icon-position"><a routerLink="/user/{{uid}}/website"><i class="checkmark-grid fas fa-less-than"></i></a></span>
+          <a routerLink='/user/{{uid}}/website/new'><span id="h2-white"><strong>New Website</strong></span></a>
+          <span class="float-right icon-position"><button form='myForm' class='btn bg-transparent' type='submit'><i class="checkmark-grid fas fa-check"></i></button></span>
       </div>
   </nav>
 </div>
@@ -18,43 +18,31 @@
 <div class="row list-format-padding full-width sw-full-screen">
   <div class="col-3 d-none d-xl-block vertical-rule">
       <ul class="list-group">
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Address Book App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Blogger</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Blogging App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
-          </li>
-          <li class="list-group-item">
-              <a routerLink="/user/:uid/website/:wid/page">Script Testing App</a>
-              <a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog float-right"></i></a>
+          <li class="list-group-item" *ngFor='let website of websites'>
+              <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
+              <a routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog float-right"></i></a>
           </li>
       </ul>
   </div>
 
   <div class="col-xl-9 col-sm-12">
-      <form>
+      <form id='myForm' #myForm='ngForm' (ngSubmit)='createWebsite()'>
           <div class="form-group">
               <label class="form-label" for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Name">
+              <input [(ngModel)]='name' name='name' type="text" required class="form-control" id="name" placeholder="Name">
           </div>
           <div class="form-group">
               <label class="form-label" for="description">Description</label>
-              <textarea class="form-control" id="description" placeholder="Description" rows="5"></textarea>
+              <textarea [(ngModel)]='description' name='description' class="form-control" id="description" placeholder="Description" rows="5"></textarea>
           </div>
-          <a routerLink='/user/:uid/website' class='btn btn-lg btn-warning'>Cancel</a>
-          <a routerLink='/user/:uid/website' class='btn btn-lg btn-success float-right'>Submit</a>
+          <a routerLink='/user/{{uid}}/website' class='btn btn-lg btn-warning'>Cancel</a>
+          <button type='submit' class='btn btn-lg btn-success float-right'>Submit</button>
       </form>
   </div>
 </div>
 
 <nav class="navbar fixed-bottom head-footer">
   <div class="full-width">
-      <a routerLink="/user/:uid"> <i class="fas fa-user float-right icons-right"></i></a>
+      <a routerLink="/user/{{uid}}"> <i class="fas fa-user float-right icons-right"></i></a>
   </div>
 </nav>
