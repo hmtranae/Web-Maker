@@ -1,28 +1,30 @@
 <nav class="navbar fixed-top row navbar-light page-navbar-color">
-  <a routerLink="/user/:uid/website/:wid/page"><i class="fas fa-less-than page-icons"></i></a>
+  <a routerLink="/user/{{uid}}/website/{{wid}}/page"><i class="fas fa-less-than page-icons"></i></a>
   <div class="col">
-      <a routerLink='/user/:uid/website/:wid/page/new'><span id="h2-grey"><strong>New Page</strong></span></a>
+      <a routerLink='/user/{{uid}}/website/{{wid}}/page/new'><span id="h2-grey"><strong>New Page</strong></span></a>
   </div>
-  <a routerLink="/user/:uid/website/:wid/page"><i class="page-icons fas fa-check float-right"></i></a>
+  <button [disabled]='myForm.invalid' form='myForm' class='btn bg-transparent' type='submit'><i class="page-icons fas fa-check float-right"></i></button>
 </nav>
 
 <div class="container-fluid">
-  <form>
+  <form id='myForm' #myForm='ngForm' (ngSubmit)='createPage()'>
       <div class="form-group">
           <label for="name" class="form-label">Name</label>
-          <input type="text" placeholder="Page Name" class="form-control" id="name">
+          <input type="text" name='name' required [(ngModel)]='name' placeholder="Page Name" class="form-control" id="name">
       </div>
       <div class="form-group">
           <label for="title" class="form-label">Title</label>
-          <input type="text" class="form-control" id="title" placeholder="Page Title">
+          <input type="text" name='title' [(ngModel)]='title' class="form-control" id="title" placeholder="Page Title">
       </div>
+      <a routerLink='user/{{uid}}/website/{{wid}}/page' class='btn btn-lg btn-warning'>Cancel</a>
+      <button [disabled]='myForm.invalid' type='submit' class='btn btn-lg btn-success float-right'>Submit</button>
   </form>
 </div>
 
 <div class="container">
   <nav class="navbar fixed-bottom navbar-light page-navbar-color">
       <div class="full-width">
-          <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
+          <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right user-icons"></i></a>
       </div>
   </nav>
 </div>

@@ -1,29 +1,30 @@
 <nav class="navbar fixed-top row navbar-light page-navbar-color">
-  <a routerLink="/user/:uid/website/:wid/page"><i class="fas fa-less-than page-icons"></i></a>
+  <a routerLink="/user/{{uid}}/website/{{wid}}/page"><i class="fas fa-less-than page-icons"></i></a>
   <div class="col">
-      <a routerLink='/user/:uid/website/:wid/page/:pid'><span id="h2-grey"><strong>Edit Page</strong></span></a>
+      <a routerLink='/user/{{uid}}/website/{{wid}}/page/{{pid}}'><span id="h2-grey"><strong>Edit Page</strong></span></a>
   </div>
-  <a routerLink="/user/:uid/website/:wid/page"><i class="page-icons fas fa-check float-right"></i></a>
+  <button [disabled]='myForm.invalid' class='btn bg-transparent' type='submit' form='myForm'><i class="page-icons fas fa-check float-right"></i></button>
 </nav>
 
 <div class="container-fluid">
-  <form>
+  <form id='myForm' #myForm='ngForm' (ngSubmit)='update()'>
       <div class="form-group">
           <label for="name" class="form-label">Name</label>
-          <input type="text" placeholder="Blog Post" class="form-control" id="name">
+          <input required type="text" placeholder="Blog Post" class="form-control" name='name' [(ngModel)]='page.name' id="name">
       </div>
       <div class="form-group">
           <label for="title" class="form-label">Title</label>
-          <input type="text" class="form-control" id="title" placeholder="Page Title">
+          <input required type="text" class="form-control" id="title" name='title' [(ngModel)]='page.title' placeholder="Page Title">
       </div>
-      <a class="btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page">Delete</a>
+      <a routerLink='/user/{{uid}}/website/{{wid}}/page' class='btn btn-lg btn-warning'>Cancel</a>
+      <button (click)='delete()' class="btn btn-lg btn-danger float-right" type='button'>Delete</button>
   </form>
 </div>
 
 <div class="container">
   <nav class="navbar fixed-bottom navbar-light page-navbar-color">
       <div class="full-width">
-          <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
+          <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right user-icons"></i></a>
       </div>
   </nav>
 </div>
