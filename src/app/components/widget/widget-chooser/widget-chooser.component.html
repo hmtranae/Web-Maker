@@ -1,27 +1,27 @@
 <nav class="navbar fixed-top row navbar-light page-navbar-color">
-  <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-less-than page-icons"></i></a>
+  <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-less-than page-icons"></i></a>
   <div class="col">
-      <a routerLink='/user/:uid/website/:wid/page/:pid/widget/new'><span id="h2-grey"><strong>Choose Widget</strong></span></a>
+      <a routerLink='/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new'><span id="h2-grey"><strong>Choose Widget</strong></span></a>
   </div>
 </nav>
 
-<div class="container-fluid">
-  <ul>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Header </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> HTML </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Label </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Text Input </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Link </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Button </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Image </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Youtube </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Data Table </a></li>
-      <li><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"> Repeater </a></li>
+<div class="container">
+  <ul class='list-group-flush'>
+      <li class='list-group-item'><span (click)='create("HEADING")' class='pointer'> Header </span></li>
+      <li class='list-group-item'><a> HTML </a></li>
+      <li class='list-group-item'><a> Label </a></li>
+      <li class='list-group-item'><a> Text Input </a></li>
+      <li class='list-group-item'><a> Link </a></li>
+      <li class='list-group-item'><a> Button </a></li>
+      <li class='list-group-item'><span (click)='create("IMAGE")' class='pointer'> Image </span></li>
+      <li class='list-group-item'><span (click)='create("YOUTUBE")' class='pointer'> Youtube </span></li>
+      <li class='list-group-item'><a> Data Table </a></li>
+      <li class='list-group-item'><a> Repeater </a></li>
   </ul>
 </div>
 
 <nav class="navbar fixed-bottom navbar-light page-navbar-color">
   <div class="full-width">
-      <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
+      <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right user-icons"></i></a>
   </div>
 </nav>

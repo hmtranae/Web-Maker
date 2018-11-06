@@ -23,8 +23,8 @@ export class WidgetService {
         _id: "345", 
         widgetType: "IMAGE", 
         pageId: "321", 
-        width: "100%", 
-        url: "http://lorempixel.com/400/200/"
+        width: "50%", 
+        url: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBKHUZJ.img?h=416&w=624&m=6&q=60&u=t&o=f&l=f&x=1733&y=1447"
         },
         {
         _id: "567", 
@@ -37,7 +37,7 @@ export class WidgetService {
         _id: "678", 
         widgetType: "YOUTUBE", 
         pageId: "321", 
-        width: "100%", 
+        width: "60%", 
         url: "https://youtu.be/AM2Ivdi9c4E" 
         },
     ];
