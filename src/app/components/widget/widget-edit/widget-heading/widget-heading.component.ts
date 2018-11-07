@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WidgetService } from 'src/app/services/widget.service.client';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Widget } from 'src/app/models/widget.model.client';
 
 @Component({
   selector: 'app-widget-heading',
@@ -13,7 +14,7 @@ export class WidgetHeadingComponent implements OnInit {
   pid : string;
   uid : string;
   wid : string;
-  widget : any;
+  widget : Widget;
 
   constructor(private widgetService : WidgetService, private activatedRoute : ActivatedRoute, private router : Router) { }
 
