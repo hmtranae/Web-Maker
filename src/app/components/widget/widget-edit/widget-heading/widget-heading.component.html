@@ -1,34 +1,34 @@
 <div>
     <nav class="navbar fixed-top row navbar-light page-navbar-color">
-        <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-less-than page-icons"></i></a>
+        <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-less-than page-icons"></i></a>
         <div class="col">
-            <a routerLink='/user/:uid/website/:wid/page/:pid/widget/:wgid'><span id="h2-grey"><strong>Widget Edit</strong></span></a>
+            <a routerLink='/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}'><span id="h2-grey"><strong>Widget Edit</strong></span></a>
         </div>
-        <a href="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-check page-icons float-right"></i></a>
+        <button class='btn bg-transparent' type='submit' form='myForm'><i class="fas fa-check page-icons float-right"></i></button>
     </nav>
 </div>
 
 <div class="container-fluid">
-    <form>
+    <form id='myForm' #myForm='ngForm' (ngSubmit)='update()'>
         <div class="form-group">
             <label for="name" class="form-label">Name</label>
-            <input type="text" placeholder="Heading Name" id="name" class="form-control">
+            <input name='name' [(ngModel)]='widget.name' type="text" placeholder="Heading Name" id="name" class="form-control">
         </div>
         <div class="form-group">
             <label for="text" class="form-label">Text</label>
-            <input type="text" placeholder="More days of flooding ahead for Carolinas, surrounding states" id="text"
+            <input name='text' [(ngModel)]='widget.text' type="text" placeholder="More days of flooding ahead for Carolinas, surrounding states" id="text"
                 class="form-control">
         </div>
         <div class="form-group">
             <label for="size" class="form-label">Size</label>
-            <input type="number" placeholder="3" id="size" class="form-control">
+            <input name='size' [(ngModel)]='widget.size' type="number" placeholder="3" id="size" class="form-control">
         </div>
-        <a class="btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Delete</a>
+        <button type='button' (click)='delete()' class="btn btn-danger btn-block" >Delete</button>
     </form>
 </div>
 
 <nav class="navbar fixed-bottom navbar-light page-navbar-color">
     <div class="full-width">
-        <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
+        <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right user-icons"></i></a>
     </div>
 </nav>

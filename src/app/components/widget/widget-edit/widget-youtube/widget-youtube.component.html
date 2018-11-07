@@ -1,37 +1,35 @@
 <nav class="navbar fixed-top row navbar-light page-navbar-color">
-  <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-less-than page-icons"></i></a>
-  <div class="col">
-      <a routerLink='/user/:uid/website/:wid/page/:pid/widget/:wgid'><span id="h2-grey"><strong>Widget Edit</strong></span></a>
-  </div>
-  <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-check page-icons float-right"></i></a>
+    <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-less-than page-icons"></i></a>
+    <div class="col">
+        <a routerLink='/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}'><span id="h2-grey"><strong>Widget Edit</strong></span></a>
+    </div>
+    <button class='btn bg-transparent' type='submit' form='myForm'><i class="fas fa-check page-icons float-right"></i></button>
 </nav>
 
 <div class="container-fluid">
-  <form>
-      <div class="form-group">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" placeholder="Video Name" id="name" class="form-control">
-      </div>
-      <div class="form-group">
-          <label for="text" class="form-label">Text</label>
-          <input type="text" placeholder="Video Text" id="text" class="form-control">
-      </div>
-      <div class="form-group">
-          <label for="url" class="form-label">URL</label>
-          <input type="text" placeholder="Video URL" id="url" class="form-control">
-      </div>
-      <div class="form-group">
-          <label for="width" class="form-label">Width</label>
-          <input type="text" placeholder="Video Width" id="width" class="form-control">
-      </div>
-      <a routerLink="/user/:uid/website/:wid/page/:pid/widget" class="btn btn-danger btn-block">Delete</a>
-  </form>
+    <form id='myForm' #myForm='ngForm' (ngSubmit)='update()'>
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input name='name' [(ngModel)]='widget.name' type="text" placeholder="Image Name" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="text" class="form-label">Text</label>
+            <input name='text' [(ngModel)]='widget.text' type="text" placeholder="Image Text" id="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="url" class="form-label">URL</label>
+            <input name='url' [(ngModel)]='widget.url' type="text" placeholder="Image URL" id="url" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="width" class="form-label">Width</label>
+            <input name='width' [(ngModel)]='widget.width' type="text" placeholder="Image Width" id="width" class="form-control">
+        </div>
+        <button type='button' (click)='delete()' class="btn btn-danger btn-block">Delete</button>
+    </form>
 </div>
 
-<div class="container">
-  <nav class="navbar fixed-bottom navbar-light page-navbar-color">
-      <div class="full-width">
-          <a routerLink="/user/:uid"><i class="fas fa-user float-right user-icons"></i></a>
-      </div>
-  </nav>
-</div>
+<nav class="navbar fixed-bottom navbar-light page-navbar-color">
+    <div class="full-width">
+        <a routerLink="/user/{{uid}}"><i class="fas fa-user float-right user-icons"></i></a>
+    </div>
+</nav>
