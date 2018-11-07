@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page.service.client';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Page } from 'src/app/models/page.model.client';
 
 @Component({
   selector: 'app-page-list',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PageListComponent implements OnInit {
 
-  pages : any[];
+  pages : Page[];
   wid : string;
   uid : string;
   

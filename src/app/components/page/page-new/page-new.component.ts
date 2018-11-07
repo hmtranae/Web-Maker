@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page.service.client';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Page } from 'src/app/models/page.model.client';
 
 @Component({
   selector: 'app-page-new',
@@ -14,7 +15,6 @@ export class PageNewComponent implements OnInit {
   name : string;
   title : string;
 
-
   constructor(private pageService : PageService, private activatedRoute : ActivatedRoute, private router : Router) { }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class PageNewComponent implements OnInit {
   }
 
   createPage() {
-    const page = {
+    const page : Page = {
       name : this.name,
       title : this.title,
       websiteId : this.wid
