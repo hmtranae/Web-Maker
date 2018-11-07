@@ -28,10 +28,9 @@ export class WidgetChooserComponent implements OnInit {
       widgetType: type,
       pageId: this.pid
     };
+
     this.widgetService.createWidget(widget);
-
     const wgid = this.widgetService.widgets[this.widgetService.widgets.length-1]._id;
-
     this.router.navigate(['user', this.uid, 'website', this.wid, 'page', this.pid, 'widget', wgid]);
   }
 
