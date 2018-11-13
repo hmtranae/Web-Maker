@@ -9,10 +9,6 @@
 <div class="container-fluid">
     <form id='myForm' #myForm='ngForm' (ngSubmit)='update()'>
         <div class="form-group">
-            <label for="name" class="form-label">Name</label>
-            <input name='name' [(ngModel)]='widget.name' type="text" placeholder="Image Name" id="name" class="form-control">
-        </div>
-        <div class="form-group">
             <label for="text" class="form-label">Text</label>
             <input name='text' [(ngModel)]='widget.text' type="text" placeholder="Image Text" id="text" class="form-control">
         </div>
