@@ -20,7 +20,7 @@ export class PageNewComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.wid = params['wid'];
-      this.uid = params['wid'];
+      this.uid = params['uid'];
     });
   }
 
