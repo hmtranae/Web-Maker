@@ -1,5 +1,4 @@
 // require is a node js keyword like "import" in typescript
-
 // express library, create running server. Can listen to incoming request
 
 const express = require('express');
@@ -30,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 
 // CORS - Cross-Origin Resource Sharing
-
 // For security purposes, browser only allowed client side to request data from its own server. CORS is a mechanism that determines whether to block or fulfill requests for restricted resources on a web page from another domain outside the domain from which the resource originated.
 
 app.use(function(req, res, next) {
@@ -56,6 +54,8 @@ app.set('port', port);
 // Create HTTP server
 
 const server = http.createServer(app);
+
+require('./server/app')(app);
 
 
 // For Build: Catch all other routes and return the index file -- BUILDING
