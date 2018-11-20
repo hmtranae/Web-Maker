@@ -95,7 +95,7 @@ module.exports = function(app) {
     const website = req.body;
     const oldWeb = selectWebsiteById(website._id);
     const index = websites.indexOf(oldWeb);
-    this.websites[index] = website;
+    websites[index] = website;
     res.json(website);
   }
 
