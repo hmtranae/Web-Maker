@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { Routing } from "./app.routing";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -42,7 +43,7 @@ import { WidgetService } from './services/widget.service.client';
     WidgetYoutubeComponent,
     WidgetImageComponent
   ],
-  imports: [BrowserModule, Routing, FormsModule],
+  imports: [BrowserModule, Routing, FormsModule, HttpModule],
   providers: [UserService, WebsiteService, PageService, WidgetService],
   bootstrap: [AppComponent]
 })
