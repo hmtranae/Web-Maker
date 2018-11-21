@@ -85,10 +85,18 @@ module.exports = function(app) {
     }
 
     function updateWidget(req, res) {
-
+        const widget = req.body;
+        const oldWidget = selectWidgetById(widget._id);
+        const index = widgets.indexOf(oldWidget);
+        widgets[index] = widget;
+        res.json(widget);
     }
 
     function deleteWidget(req, res) {
-
+        const wgid = req.params['wgid'];
+        const widget = selectWidgetById(wgid);
+        const index = widgets.indexOf(widget);
+        widgets.splice(index, 1);
+        res.json(widgets);
     }
 }
