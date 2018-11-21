@@ -13,7 +13,13 @@ export class WidgetHeadingComponent implements OnInit {
   pid: string
   uid: string
   wid: string
-  widget: Widget
+  widget: Widget = {
+    widgetType: 'HEADING',
+    pageId: '',
+    text: '',
+    url: '',
+    width: ''
+  }
 
   constructor(
     private widgetService: WidgetService,

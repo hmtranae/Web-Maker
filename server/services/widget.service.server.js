@@ -12,7 +12,7 @@ module.exports = function(app) {
     app.put('/api/widget', updateWidget);
 
     // Delete Widget
-    app.delete('api/widget/:wgid', deleteWidget);
+    app.delete('/api/widget/:wgid', deleteWidget);
 
     widgets = [
         {

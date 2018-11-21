@@ -13,7 +13,13 @@ export class WidgetYoutubeComponent implements OnInit {
   pid: string
   wid: string
   wgid: string
-  widget: Widget
+  widget: Widget = {
+    widgetType: 'YOUTUBE',
+    pageId: '',
+    text: '',
+    url: '',
+    width: ''
+  }
 
   constructor(
     private activatedRoute: ActivatedRoute,

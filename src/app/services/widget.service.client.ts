@@ -47,7 +47,7 @@ export class WidgetService {
   }
 
   deleteWidget(widgetId: string) {
-    const url = this.baseUrl + `api/widget/${widgetId}`
+    const url = this.baseUrl + `/api/widget/${widgetId}`
     return this.http.delete(url).pipe(
       map((res: Response) => {
         return res.json()

@@ -34,9 +34,7 @@ export class WidgetChooserComponent implements OnInit {
     }
 
     this.widgetService.createWidget(widget).subscribe((widget: Widget) => {
-      const wgid: string = this.widgetService.widgets[
-        this.widgetService.widgets.length - 1
-      ]._id
+      const wgid: string = widget._id
       this.router.navigate([
         'user',
         this.uid,
