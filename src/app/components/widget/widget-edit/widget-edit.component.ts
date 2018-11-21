@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { WidgetService } from 'src/app/services/widget.service.client';
-import { Widget } from 'src/app/models/widget.model.client';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { WidgetService } from 'src/app/services/widget.service.client'
+import { Widget } from 'src/app/models/widget.model.client'
 
 @Component({
   selector: 'app-widget-edit',
@@ -9,17 +9,22 @@ import { Widget } from 'src/app/models/widget.model.client';
   styleUrls: ['./widget-edit.component.css']
 })
 export class WidgetEditComponent implements OnInit {
+  wgid: string
+  widget: Widget
 
-  wgid : string;
-  widget : Widget;
-
-  constructor(private activatedRoute : ActivatedRoute, private widgetService : WidgetService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private widgetService: WidgetService
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      this.wgid = params['wgid'];
-      this.widget = this.widgetService.findWidgetById(this.wgid);
-    });
+      this.wgid = params['wgid']
+      this.widgetService
+        .findWidgetById(this.wgid)
+        .subscribe((widget: Widget) => {
+          this.widget = widget
+        })
+    })
   }
-
 }
