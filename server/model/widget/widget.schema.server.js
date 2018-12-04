@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var WidgetSchema = mongoose.Schema({
+const WidgetSchema = mongoose.Schema({
     pageId : 
     widgetType : 
     name : 

@@ -1,5 +1,7 @@
 module.exports = function(app) {
 
+  const userModel = require('../model/user/user.model.server');
+
   // Create User
   app.post('/api/user', createUser);
 
@@ -17,48 +19,21 @@ module.exports = function(app) {
   //put: update information
   //delete
 
-  users = [
-    {
-      _id: "123",
-      username: "alice",
-      password: "alice",
-      firstName: "Alice",
-      lastName: "Wonder",
-      email: "alice@gmail.com"
-      },
-      {
-      _id: "234",
-      username: "bob",
-      password: "bob",
-      firstName: "Bob",
-      lastName: "Marley",
-      email: "bob@whatever.com"
-      },
-      {
-      _id: "345",
-      username: "charly",
-      password: "charly",
-      firstName: "Charly",
-      lastName: "Garcia",
-      email: "charly@hotmail.com"
-      },
-      {
-      _id: "456",
-      username: "shiyu",
-      password: "shiyu",
-      firstName: "Shiyu",
-      lastName: "Wang",
-      email: "swang@ulem.org"
-      }
-  ];
-
   function createUser(req, res) {
     // Declare user and grab it from the request.body
-    const user = req.body; // client side is sending request to server
-    user._id = Math.random().toString();
-    users.push(user);
+    // const user = req.body; 
+    // client side is sending request to server
+    // user._id = Math.random().toString();
+    // users.push(user);
     // for server, response back to the client the user
-    res.json(user); // send user object as a json format
+    // res.json(user); 
+    // send user object as a json format
+    var user = req.body;
+    userModel.createUser(user).then(
+      (data) => {
+        res.json(data);
+      }
+    )
   }
 
   function findUserById(req, res) {
