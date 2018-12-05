@@ -1,4 +1,4 @@
-module.exports = function(app) {
+module.exports = async function(app) {
 
   const userModel = require('../model/user/user.model.server');
 
@@ -19,7 +19,7 @@ module.exports = function(app) {
   //put: update information
   //delete
 
-  function createUser(req, res) {
+  async function createUser(req, res) {
     // Declare user and grab it from the request.body
     // const user = req.body; 
     // client side is sending request to server
@@ -29,60 +29,38 @@ module.exports = function(app) {
     // res.json(user); 
     // send user object as a json format
     var user = req.body;
-    userModel.createUser(user).then(
-      (data) => {
-        res.json(data);
-      }
-    )
+    const data = await userModel.createUser(user);
+    res.json(data);
   }
 
-  function findUserById(req, res) {
+  async function findUserById(req, res) {
     const userId = req.params['uid'];
-    let user = selectUserById(userId);
-    res.json(user);
+    const data = await userModel.findUserById(userId);
+    res.json(data);
   }
 
-  function findUser(req, res) {
+  async function findUser(req, res) {
     const username = req.query['username'];
     const password = req.query['password'];
 
     if(username && password) {
-      let user;
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].username === username && users[i].password === password) {
-          user = users[i];
-        }
-      }
-      res.json(user);
+      const data = await userModel.findUserByCredentials(username, password);
+      res.json(data);
       return;
     }
 
     if(username) {
-      let user;
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].username === username) {
-          user = users[i];
-        }
-      }
-      res.json(user);
+      const data = await userModel.findUserByUsername(username);
+      res.json(data);
       return;
     }
   }
 
-  function selectUserById(uid) {
-    for (let x = 0; x < users.length; x++) {
-      if (users[x]._id === uid) {
-				return users[x];
-			}
-    }
-  }
-
-  function updateUser(req, res) {
+  async function updateUser(req, res) {
     const user = req.body;
-		const oldUser = selectUserById(user._id);
-		const index = users.indexOf(oldUser);
-		users[index] = user;
-    res.json(user)
+    const uid = user._id;
+    const data = await userModel.updateUser(uid, user);
+    res.json(data);
   }
 
 };
