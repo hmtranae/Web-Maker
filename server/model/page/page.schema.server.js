@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const PageSchema = mongoose.Schema({
-    websiteId : "",
-    name : { type : String, default : "" },
-    description : { type : String, default : "" },
+    websiteId : { type : mongoose.Schema.Types.ObjectId, ref: "WebsiteModel" },
+    name : String,
+    title : String,
     dateCreated : { type : Date, default : Date.now }
 }, 
 { collection : "page" }
