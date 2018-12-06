@@ -21,13 +21,18 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.findUserByCredentials(
       this.username, this.password).subscribe(
-        (user : User) => {
-          this.router.navigate([`user/${user._id}`]);
+        (user : any) => {
+          if(!user) {
+            this.errorFlag = true;
+          } else {
+            this.errorFlag = false;
+            this.router.navigate([`user/${user._id}`]);
+          }
         },
-        (error : any) => {
-          this.errorFlag = true;
-        }
-      )
+      ),
+      (error : any) => {
+        this.errorFlag = true;
+      }
   }
 
 }

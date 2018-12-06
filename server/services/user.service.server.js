@@ -1,4 +1,4 @@
-module.exports = async function(app) {
+module.exports = function(app) {
 
   const userModel = require('../model/user/user.model.server');
 
