@@ -1,6 +1,26 @@
 module.exports = function(app) {
 
   const userModel = require('../model/user/user.model.server');
+  const LocalStrategy = require('passport-local').Strategy;
+  const passport = require('passport');
+
+  passport.serializeUser(serializeUser);
+  passport.deserializeUser(deserializeUser);
+
+  function serializeUser(user, done) {
+    done(null, user);
+  }
+
+  function deserializeUser(user, done) {
+    userModel.findUserById(user._id).then(
+      function(user) {
+        done(null, user);
+      },
+      function(err) {
+        done(err, null);
+      }
+    );
+  }
 
   // Create User
   app.post('/api/user', createUser);
@@ -20,14 +40,6 @@ module.exports = function(app) {
   //delete
 
   async function createUser(req, res) {
-    // Declare user and grab it from the request.body
-    // const user = req.body; 
-    // client side is sending request to server
-    // user._id = Math.random().toString();
-    // users.push(user);
-    // for server, response back to the client the user
-    // res.json(user); 
-    // send user object as a json format
     var user = req.body;
     const data = await userModel.createUser(user);
     res.json(data);
