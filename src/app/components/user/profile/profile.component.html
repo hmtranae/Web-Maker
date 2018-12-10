@@ -31,12 +31,12 @@
 
       <a routerLink="/user/{{uid}}/website" class="btn btn-primary btn-block">Websites</a>
 
-      <a routerLink="/login" class="btn btn-danger btn-block">Logout</a>
+      <button type='button' (click)='logout()' class="btn btn-danger btn-block">Logout</button>
   </form>
 </div>
 <!-- .fixed-bottom fixes navbar to the footer -->
 <nav class="navbar fixed-bottom head-footer">
   <div class="full-width">
-      <a routerLink='/user/{{uid}}'><i class="fas fa-user float-right icons-right"></i></a>
+      <a routerLink='/profile'><i class="fas fa-user float-right icons-right"></i></a>
   </div>
 </nav>
