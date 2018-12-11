@@ -42,11 +42,30 @@ export class UserService {
 
   loggedIn() {
     this.options.withCredentials = true;
-    return this.http.post(this.baseUrl + '/api/loggedIn', '', this.options).pipe(
+
+    const url = this.baseUrl + '/api/loggedIn';
+    return this.http.post(url, '', this.options).pipe(
       map((res : Response) => {
         const user = res.json();
         if(user !== 0) {
           this.sharedService.user = user; // To share user object with all components
+          return true;
+        } else {
+          this.router.navigate(['/login']);
+          return false;
+        }
+      })
+    );
+  }
+
+  adminLoggedIn() {
+    this.options.withCredentials = true;
+
+    const url = this.baseUrl + '/api/loggedIn';
+    return this.http.post(url, '', this.options).pipe(
+      map((res : Response) => {
+        const user = res.json();
+        if(user !== 0 && user.admin) {
           return true;
         } else {
           this.router.navigate(['/login']);
@@ -67,7 +86,18 @@ export class UserService {
     )
   }
 
-  createUser(user: User) {
+  register(user : User) {
+    // this communication will be secured
+    this.options.withCredentials = true;
+    const url = this.baseUrl + '/api/register';
+    return this.http.post(url, user, this.options).pipe(
+      map((res: Response) => {
+        return res.json();
+      })
+    );
+  }
+
+  createUser(user : User) {
     const url = this.baseUrl + '/api/user'
     return this.http.post(url, user).pipe(
       map((res: Response) => {
@@ -77,7 +107,7 @@ export class UserService {
     // when createUser gets a response, just return the user
   }
 
-  findUserById(userId: string) {
+  findUserById(userId : string) {
     const url = this.baseUrl + '/api/user/' + userId
     return this.http.get(url).pipe(
       map((res: Response) => {
@@ -86,7 +116,7 @@ export class UserService {
     )
   }
 
-  findUserByUsername(username: string) {
+  findUserByUsername(username : string) {
     const url = this.baseUrl + '/api/user?username=' + username
     return this.http.get(url).pipe(
       map((res: Response) => {
@@ -95,7 +125,7 @@ export class UserService {
     )
   }
 
-  findUserByCredentials(username: string, password: string) {
+  findUserByCredentials(username : string, password : string) {
     const url =
       this.baseUrl + '/api/user?username=' + username + '&password=' + password
     return this.http.get(url).pipe(
@@ -105,7 +135,7 @@ export class UserService {
     )
   }
 
-  updateUser(user: User) {
+  updateUser(user : User) {
     const url = this.baseUrl + '/api/user'
     return this.http.put(url, user).pipe(
       map((res: Response) => {

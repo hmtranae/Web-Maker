@@ -13,6 +13,8 @@ import { WidgetChooserComponent } from "./components/widget/widget-chooser/widge
 import { WidgetEditComponent } from "./components/widget/widget-edit/widget-edit.component";
 import {ProfileComponent} from "./components/user/profile/profile.component";
 import { AuthGuard } from "./services/auth-guard.service";
+import { UserListComponent } from "./components/user/user-list/user-list.component";
+import { AdminGuard } from "./services/admin-guard.service";
 // Import all other components here
 
 
@@ -30,7 +32,8 @@ const APP_ROUTES : Routes = [
     { path : 'user/:uid/website/:wid/page/:pid' , component: PageEditComponent, canActivate: [AuthGuard] },
     { path : 'user/:uid/website/:wid/page/:pid/widget' , component: WidgetListComponent, canActivate: [AuthGuard] },
     { path : 'user/:uid/website/:wid/page/:pid/widget/new' , component: WidgetChooserComponent, canActivate: [AuthGuard] },
-    { path : 'user/:uid/website/:wid/page/:pid/widget/:wgid' , component: WidgetEditComponent, canActivate: [AuthGuard] }
+    { path : 'user/:uid/website/:wid/page/:pid/widget/:wgid' , component: WidgetEditComponent, canActivate: [AuthGuard] },
+    { path : 'user-list' , component: UserListComponent, canActivate: [AdminGuard]}
 ];
 
 

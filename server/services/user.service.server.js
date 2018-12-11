@@ -3,6 +3,7 @@ module.exports = function(app) {
   const userModel = require('../model/user/user.model.server');
   const LocalStrategy = require('passport-local').Strategy;
   const passport = require('passport');
+  const bcrypt = require('bcrypt-nodejs');
 
   passport.serializeUser(serializeUser);
   passport.deserializeUser(deserializeUser);
@@ -28,8 +29,8 @@ module.exports = function(app) {
   passport.use(new LocalStrategy(localStrategy));
 
   async function localStrategy(username, password, done) {
-    const data = await userModel.findUserByCredentials(username, password);
-    if(data) {
+    const data = await userModel.findUserByUsername(username);
+    if(data && bcrypt.compareSync(password, data.password)) {
       return done(null, data); // If there is data, then send back the data 
     } else {
       return done(null, false); // Else send back false
@@ -57,6 +58,9 @@ module.exports = function(app) {
   // LoggedOut
   app.post('/api/logout', logout);
 
+  // User Registration
+  app.post('/api/register', register);
+
   //get: grab information from the server
   //post: create new information
   //put: update information
@@ -74,6 +78,19 @@ module.exports = function(app) {
   function logout(req, res) {
     req.logout();
     res.send(200); // AKA Success!
+  }
+
+  // Register function is async because once the user is created in the databse, then the login() is run to set to the current user
+
+  async function register(req, res) {
+    var user = req.body;
+    user.password = bcrypt.hashSync(user.password);
+    const data = await userModel.createUser(user);
+    // Ask about these two following lines
+    // How req and res make sense with response to register?
+    req.login(data, function(err) { 
+      res.json(data);               
+    });
   }
 
   async function createUser(req, res) {
