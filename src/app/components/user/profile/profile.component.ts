@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
     password: '', 
     firstName: '', 
     lastName: '', 
-    email: ''
+    email: '',
   };
   oldUsername : string;
   userError : boolean;
