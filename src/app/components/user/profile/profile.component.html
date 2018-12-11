@@ -32,7 +32,9 @@
       <a routerLink="/user/{{uid}}/website" class="btn btn-primary btn-block">Websites</a>
 
       <button type='button' (click)='logout()' class="btn btn-danger btn-block">Logout</button>
-  </form>
+      <br>
+      <a *ngIf='user.admin' routerLink='/user-list' class='btn btn-outline-dark'>User List</a>
+    </form>
 </div>
 <!-- .fixed-bottom fixes navbar to the footer -->
 <nav class="navbar fixed-bottom head-footer">
